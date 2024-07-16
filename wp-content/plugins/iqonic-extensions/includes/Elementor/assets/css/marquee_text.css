@@ -1,0 +1,115 @@
+.marquee-text {
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+  white-space: nowrap;
+}
+.marquee-text .mrq-text {
+  white-space: nowrap;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.marquee-text .marquee-list{
+  margin-bottom: 0;
+  color: var(--color-decorative-text);
+  display: flex;
+  will-change: transform;
+  padding:10px 0;
+}
+.marquee-text .marquee-list.marquee-two{
+  will-change: transform;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  margin:0;
+  padding-left: 0;
+}
+.marquee-text.right-direction .marquee-list{
+  animation: move-marquee-right 50s linear infinite;
+}
+.marquee-text.right-direction .marquee-list.marquee-two{
+  animation: move-marquee-right-two 50s linear infinite;
+}
+.marquee-text.left-direction .marquee-list{
+  animation: move-marquee-left 50s linear infinite;
+}
+.marquee-text.left-direction .marquee-list.marquee-two{
+  animation: move-marquee-left-two 50s linear infinite;
+  transform: translateX(100%) translateZ(0);
+}
+.marquee-text .mrq-text:hover .marquee-list,
+.marquee-text .mrq-text:hover .marquee-list.marquee-two{
+  animation-play-state: paused;
+} 
+.marquee-text .marquee-list li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-right:1.5em;
+}
+.marquee-text .marquee-list li .icon-effect{
+  background-image: url(../images/wave-marquee.webp);
+  width: 11.125em;
+  height: 1.9375em;
+  display: inline-block;
+  margin-right: 1.5em;
+}
+.marquee-text .marquee-list .title{
+  font-family: var(--highlight-font-family);
+  letter-spacing: var(--font-letter-spacing-body);
+  text-transform: capitalize;
+  color: var(--color-theme-white);
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+
+@keyframes move-marquee-left{
+  0% {
+   transform: translateX(0) translateZ(0);
+}
+
+100% {
+   transform: translateX(-100%) translateZ(0);
+}
+}
+
+@keyframes move-marquee-left-two{
+  0% {
+    transform: translateX(100%) translateZ(0);
+  }
+
+  100% {
+      transform: translateX(0) translateZ(0);
+  }
+}
+
+@keyframes move-marquee-right{
+  100% {
+    transform: translateX(0) translateZ(0);
+  }
+
+  0% {
+    transform: translateX(-100%) translateZ(0);
+  }
+}
+
+@keyframes move-marquee-right-two{
+  100% {
+    transform: translateX(100%) translateZ(0);
+  }
+
+  0% {
+      transform: translateX(0) translateZ(0);
+  }
+}
+
+@media(max-width:767px) {
+  .marquee-text .marquee-list li .icon-effect{
+    vertical-align: middle;
+  } 
+}

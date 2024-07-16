@@ -1,0 +1,57 @@
+
+.ealain-client-grid li .client-box
+{
+    background-color: rgb(105 105 105 / 10%);  
+    border-radius: var(--border-radius-box); 
+    padding: 24px;
+}
+
+.ealain-client-grid li .client-box .ealain-client-image
+{
+    padding: 2em 0 1.5em;
+    text-align: center;
+}
+.ealain-client-grid li .client-box .ealain-client-image img{
+    filter: grayscale(1);
+    transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+.ealain-client-grid li .client-box:hover .ealain-client-image img{
+    filter: grayscale(0);
+}
+.ealain-client-grid li .client-box:hover .ealain-client-image svg path,
+.ealain-client-grid li .client-box:hover .ealain-client-link
+{
+    color: var(--color-theme-secondary);
+    transition: all .8s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -ms-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+.ealain-client-grid li .client-box .ealain-client-link {
+    margin-top: 0.5em;
+    display: block;
+    color: var(--global-font-color);
+}
+.ealain-client-grid{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+.ealain-client .ealain-blog-link.client_category{
+    color: var(--global-font-color);
+    gap: 0.5em;
+    display: flex;
+    align-items: center;
+}
+.ealain-client-main-box ul.ealain-team-slider li{
+    list-style-type: none
+    
+}
